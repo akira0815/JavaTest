@@ -1,26 +1,21 @@
 
 public class Doctor {
+
+	private DoctorModel model;
 	
-	private String computer = "전산시스템";
-	private String medicalAppliance = "청진기";
-	
-	public void setComputer(String computer) {
-		this.computer = computer;
-	}
-	
-	public void setMedicalAppliance(String medicalAppliance) {
-		this.medicalAppliance = medicalAppliance;
+	public Doctor(DoctorModel model) {
+		this.model = model;
 	}
 	
 	public void inquery() {
-		System.out.println(computer + "에서 " + "환자의 챠트를 조회합니다.");
+		System.out.println(String.format("%s 에서 환자의 챠트를 조회합니다.", model.getComputer()));
 	}
 
 	public void treatment() {
-		System.out.println(medicalAppliance + "로 " + "환자를 진료합니다.");
+		System.out.println(String.format("%s (으)로 환자를 진료합니다.", model.getMedicalAppliance()));
 	}
-	
-	public void prescription() {
-		System.out.println("처방전을 작성합니다.");
+
+	public void prescription() {		
+		System.out.println(String.format("%s (으)로 처방전을 작성합니다.", model.getComputer()));
 	}
 }
